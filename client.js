@@ -32,16 +32,18 @@ for (var i = 0; i < employees.length; i++) {
         employees[i].bonusPercent = employees[i].bonusPercent +0.05
     }
 
-    if (employees[i].bonusPercent >= 0.13) {
-        employees[i].bonusPercent = 0.13
-    } else if (employees[i].bonusPercent <= 0) {
-        employees[i].bonusPercent = 0
-    }
+    
 
     bottomLine = employees[i].annualSalary + (employees[i].annualSalary * employees[i].bonusPercent)
 
     if (bottomLine > 65000) {
         employees[i].bonusPercent = employees[i].bonusPercent - 0.01
+    }
+
+    if (employees[i].bonusPercent >= 0.13) {
+        employees[i].bonusPercent = 0.13
+    } else if (employees[i].bonusPercent <= 0) {
+        employees[i].bonusPercent = 0
     }
 
   
@@ -52,7 +54,10 @@ for (var i = 0; i < employees.length; i++) {
 
  for (var i = 0; i < employees.length; i++) {
        employees[i].totalBonus = employees[i].annualSalary * employees[i].bonusPercent;
+       employees[i].totalBonus = employees[i].totalBonus.toFixed(2);
        employees[i].totalCompensation = parseInt(employees[i].annualSalary) + parseInt(employees[i].totalBonus);
+       employees[i].totalCompensation = employees[i].totalCompensation.toFixed(2);
+
    }
 
 console.log(employees);
