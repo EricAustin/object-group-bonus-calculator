@@ -58,6 +58,9 @@ for (var i = 0; i < employees.length; i++) {
        employees[i].totalCompensation = parseInt(employees[i].annualSalary) + parseInt(employees[i].totalBonus);
        employees[i].totalCompensation = employees[i].totalCompensation.toFixed(2);
 
+       employees[i].totalBonus = parseInt(employees[i].totalBonus)
+       employees[i].totalCompensation = parseInt(employees[i].totalCompensation)
+
    }
 
 console.log(employees);
